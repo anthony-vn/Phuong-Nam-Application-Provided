@@ -17,6 +17,7 @@ import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Insert_Th
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Books;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Home;
+import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_MyAccount;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -65,6 +66,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_sach:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_Books()).commit();
+                        break;
+                    case R.id.nav_profile:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_MyAccount()).commit();
                         break;
                     default:
                         fragmentClass = Fragment_Category.class;
