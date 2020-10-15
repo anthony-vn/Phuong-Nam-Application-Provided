@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24px"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_theloai"
+            android:icon="@drawable/ic_backend"
+            android:title="Category" />
+        <item
+            android:id="@+id/nav_sach"
+            android:icon="@drawable/ic_book"
+            android:title="Book" />
+        <item
+            android:id="@+id/nav_hoadon"
+            android:icon="@drawable/ic_hoadon"
+            android:title="Bills" />
+
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_account"
+                    android:title="My Account" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Other">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_gioithieu"
+                    android:icon="@drawable/ic_account"
+                    android:title="Information" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_exit_to_app_24px"
+                    android:title="Exit" />
+            </group>
+        </menu>
+    </item>
+</menu>
