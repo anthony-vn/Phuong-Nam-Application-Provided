@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#243441"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity.MyAccount">
 
     <ImageView
         android:layout_width="120dp"
@@ -41,7 +43,6 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,17 +51,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email:"
+                android:text="Username:"
                 android:textColor="@color/colorWhite" />
 
             <TextView
-                android:id="@+id/tv_InforEmail"
+                android:id="@+id/tv_InforUsername2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="haunhps13181@fpt.edu.vn"
+                android:text=""
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,17 +81,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="abc@123"
+                android:text=""
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tv_InforPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=""
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </LinearLayout>
 
     <TextView
+        android:onClick="back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
-        android:text="Logout"
+        android:text="Back"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
         android:textStyle="bold" />

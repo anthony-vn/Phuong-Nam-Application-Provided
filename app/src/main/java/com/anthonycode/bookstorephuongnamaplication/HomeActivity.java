@@ -1,9 +1,9 @@
 package com.anthonycode.bookstorephuongnamaplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,10 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.anthonycode.bookstorephuongnamaplication.Activity.MyAccount;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Books;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Home;
-import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_MyAccount;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_User;
 import com.google.android.material.navigation.NavigationView;
 
@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_User()).commit();
                         break;
                     default:
-                        fragmentClass = Fragment_Category.class;
+                        fragmentClass = Fragment_Home.class;
                 }
 
                 item.setChecked(true);
@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.user) {
-            Toast.makeText(this, "View Account", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), MyAccount.class));
         }
         return super.onOptionsItemSelected(item);
     }

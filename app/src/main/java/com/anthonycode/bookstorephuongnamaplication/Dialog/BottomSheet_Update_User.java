@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_NguoiDung;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_User;
 import com.anthonycode.bookstorephuongnamaplication.DAO.UserDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
@@ -28,7 +28,7 @@ public class BottomSheet_Update_User extends BottomSheetDialogFragment {
     UserDAO userDAO;
     ArrayList<User> ds_gd;
     int id;
-    Adapter_NguoiDung adapter_category;
+    Adapter_User adapter_category;
 
     public BottomSheet_Update_User() {
     }
@@ -82,7 +82,7 @@ public class BottomSheet_Update_User extends BottomSheetDialogFragment {
 
     public void capnhat() {
         ds_gd = userDAO.getAllUser();
-        adapter_category = new Adapter_NguoiDung(ds_gd, getContext());
+        adapter_category = new Adapter_User(ds_gd, getContext());
         rcv_user.setAdapter(adapter_category);
     }
 

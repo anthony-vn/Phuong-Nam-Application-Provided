@@ -24,7 +24,7 @@ public class UserDAO {
             "phone text, " +
             "fullname text);";
 
-    public static final String TAG = "NguoiDungDAO";
+    public static final String TAG = "UserDAO";
 
     public UserDAO(Context context) {
         dbHelper = new DatabaseHelper(context);

@@ -1,4 +1,4 @@
-package com.anthonycode.bookstorephuongnamaplication.Fragment;
+package com.anthonycode.bookstorephuongnamaplication.Activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;

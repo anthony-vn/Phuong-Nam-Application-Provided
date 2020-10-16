@@ -40,4 +40,10 @@
     <string name="email">Email</string>
     <string name="desc_verify_password">Create a new and highly secure password to protect your account.</string>
     <string name="next">Next</string>
+
+    <string-array name="alert">
+        <item>Xem chi tiết</item>
+        <item>Chỉnh sửa</item>
+        <item>Xóa</item>
+    </string-array>
 </resources>

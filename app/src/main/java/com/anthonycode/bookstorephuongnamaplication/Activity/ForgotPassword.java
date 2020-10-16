@@ -1,7 +1,6 @@
-package com.anthonycode.bookstorephuongnamaplication.Fragment;
+package com.anthonycode.bookstorephuongnamaplication.Activity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +11,7 @@ public class ForgotPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment__forgot_password);
+        setContentView(R.layout.activity__forgot_password);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.anthonycode.bookstorephuongnamaplication.Fragment;
+package com.anthonycode.bookstorephuongnamaplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

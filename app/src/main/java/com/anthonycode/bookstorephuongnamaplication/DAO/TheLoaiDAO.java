@@ -10,17 +10,17 @@ import com.anthonycode.bookstorephuongnamaplication.Database.DatabaseHelper;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TheLoaiDAO {
+    public static final String TABLE_NAME = "TheLoai";
+    public static final String SQL_THE_LOAI = "CREATE TABLE TheLoai (" +
+            "id integer primary key autoincrement, " +
+            "matheloai text, " +
+            "tentheloai text, " +
+            "mota text);";
+    public static final String TAG = "TheLoaiDAO";
     private SQLiteDatabase db;
     private DatabaseHelper dbHelper;
-
-    public static final String TABLE_NAME = "TheLoai";
-    public static final String SQL_THE_LOAI = "CREATE TABLE TheLoai (id integer primary key autoincrement, matheloai text, " +
-            "tentheloai text, mota text);";
-
-    public static final String TAG = "TheLoaiDAO";
 
     public TheLoaiDAO(Context context) {
         dbHelper = new DatabaseHelper(context);
@@ -77,7 +77,7 @@ public class TheLoaiDAO {
         values.put("tentheloai", theLoai.getTenTheLoai());
         values.put("mota", theLoai.getMoTa());
         long result = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(theLoai.getId())});
-        if (result <= 0){
+        if (result <= 0) {
             return false;
         }
         return true;
