@@ -28,7 +28,7 @@
                 <item
                     android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_account"
-                    android:title="My Account" />
+                    android:title="User" />
             </group>
         </menu>
     </item>

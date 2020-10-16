@@ -1,4 +1,4 @@
-package com.anthonycode.bookstorephuongnamaplication.Fragment.User;
+package com.anthonycode.bookstorephuongnamaplication.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 

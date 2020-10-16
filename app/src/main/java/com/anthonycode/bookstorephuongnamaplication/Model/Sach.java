@@ -101,7 +101,8 @@ public class Sach {
     @Override
     public String toString() {
         return "Sach{" +
-                "maSach='" + maSach + '\'' +
+                "id='" + id + '\'' +
+                ", maSach='" + maSach + '\'' +
                 ", maTheLoai='" + maTheLoai + '\'' +
                 ", tenSach='" + tenSach + '\'' +
                 ", tacGia='" + tacGia + '\'' +

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/AppBottomSheetDialogTheme"
+    android:background="@color/colorTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bo_goc"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="120dp"
+        android:layout_height="3dp"/>
+
+    <TextView
+        android:text="User"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="#03A9F4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <EditText
+        android:id="@+id/edtInsert_username"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_button_forgot_pass"
+        android:hint="Username"
+        android:inputType="textNoSuggestions"
+        android:padding="14dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#777797"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtInsert_password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_button_forgot_pass"
+        android:hint="Password"
+        android:inputType="textNoSuggestions"
+        android:padding="14dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#777797"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/edtInsert_phone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_button_forgot_pass"
+        android:hint="Phone number"
+        android:inputType="phone"
+        android:padding="14dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#777797"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtInsert_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_button_forgot_pass"
+        android:hint="Fullname"
+        android:inputType="textNoSuggestions"
+        android:padding="14dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#777797"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAdd_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp"
+        android:text="ADD"
+        android:background="@color/colorBlack"
+        android:textColor="#FFF"
+        android:textStyle="bold" />
+
+</LinearLayout>

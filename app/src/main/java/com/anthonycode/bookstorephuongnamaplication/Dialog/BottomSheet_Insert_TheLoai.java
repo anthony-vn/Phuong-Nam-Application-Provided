@@ -53,9 +53,6 @@ public class BottomSheet_Insert_TheLoai extends BottomSheetDialogFragment {
                     matheloai.setError("Ma the loai is empty!");
                     tentheloai.setError("Ten the loai is empty!");
                 } else {
-                    if (mota_.isEmpty()) {
-                        mota.setText("None");
-                    }
                     //Thêm thể loại
                     theLoaiDAO = new TheLoaiDAO(getContext());
                     TheLoai tl = new TheLoai(matheloai_, tentheloai_, mota_);

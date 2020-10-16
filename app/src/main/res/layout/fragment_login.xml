@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#243441">
@@ -25,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="0dp"
-            android:text="Book store Phương Nam"
+            android:text="Book Store Phuong Nam"
             android:textColor="#fff"
             android:textSize="28dp"
             android:textStyle="bold" />
@@ -50,61 +49,40 @@
             android:textSize="36dp"
             android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/edt_email_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="30dp"
-            android:pointerIcon="arrow"
-            android:textColorHint="#80FFFFFF"
-            app:counterTextAppearance="@style/CounterText"
-            app:counterTextColor="@color/colorWhite"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/colorWhite"
-            app:hintTextAppearance="@style/HintText">
+            android:background="@drawable/boder_edit_text"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="#80FFFFFF" />
 
-            <EditText
-                android:id="@+id/edt_email_login"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/boder_edit_text"
-                android:ems="10"
-                android:fontFamily="sans-serif-condensed"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingStart="25dp"
-                android:paddingEnd="25dp"
-                android:textColor="@color/colorWhite" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/edt_password_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
+
+            android:background="@drawable/boder_edit_text"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed"
             android:hint="Password"
-            android:textColorHint="#80FFFFFF"
-            app:counterTextAppearance="@style/CounterText"
-            app:endIconTint="@color/colorBlack"
-            app:hintTextAppearance="@style/HintText"
-            app:passwordToggleDrawable="@drawable/icon_selector"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/colorWhite"
-            app:startIconTint="@color/colorBlack">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_password_login"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/boder_edit_text"
-                android:inputType="textPassword"
-                android:paddingStart="25dp"
-                android:paddingEnd="25dp"
-                android:textColor="@color/colorWhite">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:inputType="textPassword"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="#80FFFFFF" />
 
         <LinearLayout
             android:layout_width="wrap_content"

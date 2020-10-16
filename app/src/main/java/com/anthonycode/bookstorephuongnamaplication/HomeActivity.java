@@ -1,5 +1,10 @@
 package com.anthonycode.bookstorephuongnamaplication;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,17 +12,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Insert_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Books;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Home;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_MyAccount;
+import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_User;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -41,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
         mDrawerToggle = setupDrawerToggle();
-
         mDrawerToggle.setDrawerIndicatorEnabled(true);
         mDrawerToggle.syncState();
         mDrawerLayout.addDrawerListener(mDrawerToggle);
@@ -68,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_Books()).commit();
                         break;
                     case R.id.nav_profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_MyAccount()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_User()).commit();
                         break;
                     default:
                         fragmentClass = Fragment_Category.class;
@@ -98,7 +96,7 @@ public class HomeActivity extends AppCompatActivity {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        if (id == R.id.user){
+        if (id == R.id.user) {
             Toast.makeText(this, "View Account", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

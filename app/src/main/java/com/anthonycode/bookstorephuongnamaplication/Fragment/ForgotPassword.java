@@ -1,4 +1,4 @@
-package com.anthonycode.bookstorephuongnamaplication.Fragment.User;
+package com.anthonycode.bookstorephuongnamaplication.Fragment;
 
 import android.os.Bundle;
 import android.view.View;

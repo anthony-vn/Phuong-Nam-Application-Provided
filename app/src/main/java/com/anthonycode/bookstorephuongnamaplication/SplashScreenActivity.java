@@ -3,9 +3,12 @@ package com.anthonycode.bookstorephuongnamaplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Login;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -18,7 +21,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                try {
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                }catch (Exception e){
+                    Log.d("TAG", "Error Run SplashScreenActivity == " + e.toString());
+                }
                 finish();
             }
         }, SPLASH_SCREEN_TIMEOUT);
