@@ -8,16 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Category;
-import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
-import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
 
 public class Fragment_Home extends Fragment {
 

@@ -13,6 +13,7 @@ import com.anthonycode.bookstorephuongnamaplication.Activity.Login;
 public class SplashScreenActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN_TIMEOUT = 2000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +23,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                }catch (Exception e){
+                    startActivity(new Intent(getApplicationContext(), Login.class));
+                } catch (Exception e) {
                     Log.d("TAG", "Error Run SplashScreenActivity == " + e.toString());
                 }
                 finish();

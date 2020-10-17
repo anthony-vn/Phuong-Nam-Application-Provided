@@ -21,6 +21,7 @@ import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Update_Bo
 import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Update_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
+import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.ArrayList;
@@ -40,10 +41,11 @@ public class Adapter_Books extends RecyclerView.Adapter<Adapter_Books.MyViewHold
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvTenSach, tvGiaSach, tvSoLuong;
-        private ImageView img_edit_kt;
+        private ImageView img_edit_kt, img_books;
         public MyViewHolder(View itemView) {
             super(itemView);
             tvTenSach = itemView.findViewById(R.id.tv_tensach);
+            img_books = itemView.findViewById(R.id.img_books);
             tvGiaSach = itemView.findViewById(R.id.tv_giabia);
             tvSoLuong = itemView.findViewById(R.id.tv_soluong);
             img_edit_kt = itemView.findViewById(R.id.img_edit_books);
@@ -60,9 +62,19 @@ public class Adapter_Books extends RecyclerView.Adapter<Adapter_Books.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        holder.tvTenSach.setText(ds_tl.get(position).getTenSach());
-        holder.tvGiaSach.setText(String.valueOf(ds_tl.get(position).getGiaBia()));
-        holder.tvSoLuong.setText(String.valueOf(ds_tl.get(position).getSoLuong()));
+        Sach user = ds_tl.get(position);
+        if (position % 3 == 0) {
+            holder.img_books.setImageResource(R.drawable.ic_book_kt);
+        }else if (position % 3 == 1){
+            holder.img_books.setImageResource(R.drawable.ic_book_it);
+        }else if (position % 3 == 2){
+            holder.img_books.setImageResource(R.drawable.ic_bookshelf_blue);
+        }else {
+            holder.img_books.setImageResource(R.drawable.ic_history_book);
+        }
+        holder.tvTenSach.setText("Tên sách : " + ds_tl.get(position).getTenSach());
+        holder.tvGiaSach.setText("Giá bìa : " + String.valueOf(ds_tl.get(position).getGiaBia()));
+        holder.tvSoLuong.setText("Số lượng : " + String.valueOf(ds_tl.get(position).getSoLuong()));
 
         holder.img_edit_kt.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -121,7 +121,30 @@ public class UserDAO {
             return false;
         }
     }
-
+    //check user
+    public boolean checkUser(String username, String password) {
+        //SELECT
+        String[] columns = {"id"};
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        //WHERE clause
+        String selection = "username = ? AND password = ?";
+        //WHERE clause arguments
+        String[] selectionArgs = {username, password};
+        Cursor c = null;
+        try {
+            c = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+            c.moveToFirst();
+            int i = c.getCount();
+            c.close();
+            if (i <= 0) {
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }
 

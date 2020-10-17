@@ -20,6 +20,7 @@ import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
+import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -105,13 +106,11 @@ public class BottomSheet_Insert_Books extends BottomSheetDialogFragment {
                 }
             }
         });
-
         return view;
     }
 
     public void getSpinnerTheLoai() {
         theLoaiDAO = new TheLoaiDAO(getContext());
-
         ds_tl = theLoaiDAO.getAllTheLoai();
         ArrayAdapter<TheLoai> dataAdapter = new ArrayAdapter<TheLoai>(getContext(),
                 R.layout.row_spinner_item, ds_tl);

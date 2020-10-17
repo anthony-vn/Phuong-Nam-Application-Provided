@@ -67,7 +67,23 @@ public class TheLoaiDAO {
         }
         c.close();
         return dsTheLoai;
+    }
 
+    //getAllEmployee
+    public ArrayList<TheLoai> getMaAndTenTheLoai() {
+        ArrayList<TheLoai> dsTheLoai = new ArrayList<>();
+        Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            TheLoai ee = new TheLoai();
+            ee.setMaTheLoai(c.getString(0));
+            ee.setTenTheLoai(c.getString(1));
+            dsTheLoai.add(ee);
+            Log.d("//=====", ee.toString());
+            c.moveToNext();
+        }
+        c.close();
+        return dsTheLoai;
     }
 
     //update

@@ -53,11 +53,11 @@ public class BottomSheet_Insert_User extends BottomSheetDialogFragment {
                 String phone_ = edtPhone.getText().toString().trim();
                 String fullname_ = edtFullname.getText().toString().trim();
 
-                if (username_.isEmpty() || password_.isEmpty() || phone_.isEmpty() || fullname_.isEmpty()) {
-                    edtUsername.setError("Is empty!");
-                    edtPassword.setError("Is empty!");
-                    edtPhone.setError("Is empty!");
-                    edtFullname.setError("Is empty!");
+                if (validateForm(username_, password_, phone_, fullname_)) {
+//                    edtUsername.setError("Is empty!");
+//                    edtPassword.setError("Is empty!");
+//                    edtPhone.setError("Is empty!");
+//                    edtFullname.setError("Is empty!");
                 } else {
                     //Add user
                     userDAO = new UserDAO(getContext());
@@ -71,6 +71,19 @@ public class BottomSheet_Insert_User extends BottomSheetDialogFragment {
             }
         });
         return view;
+    }
+
+    private boolean validateForm(String usn, String psw, String phone, String fullname){
+        if (usn.isEmpty()) {
+            edtUsername.setError("Is empty!");
+        }if (psw.isEmpty()){
+            edtPassword.setError("Is empty!");
+        }if (phone.isEmpty()){
+            edtPhone.setError("Is empty!");
+        }if (fullname.isEmpty()){
+            edtFullname.setError("Is empty!");
+        }
+        return true;
     }
 
     public void capnhat() {

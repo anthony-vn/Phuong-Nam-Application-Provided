@@ -46,24 +46,37 @@ public class Adapter_User extends RecyclerView.Adapter<Adapter_User.MyViewHolder
         return vh;
     }
 
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView tvUsername, tvFullname, tvPhone;
+        private ImageView img_edit_kt, imgAvatar;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            imgAvatar = itemView.findViewById(R.id.img_avatar_user);
+            tvUsername = itemView.findViewById(R.id.tv_username);
+            tvFullname = itemView.findViewById(R.id.tv_fullname);
+            tvPhone = itemView.findViewById(R.id.tv_phone);
+            img_edit_kt = itemView.findViewById(R.id.imgBaChamUser);
+        }
+    }
+
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+        User user = ds_tl.get(position);
+        if (position % 3 == 0) {
+            holder.imgAvatar.setImageResource(R.drawable.emone);
+        }else if (position % 3 == 1){
+            holder.imgAvatar.setImageResource(R.drawable.emtwo);
+        }else {
+            holder.imgAvatar.setImageResource(R.drawable.emthree);
+        }
         holder.tvUsername.setText(ds_tl.get(position).getUserName());
         holder.tvFullname.setText(ds_tl.get(position).getHoTen());
         holder.tvPhone.setText(ds_tl.get(position).getPhone());
 
-//        holder.img_edit_kt.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-
-//            }
-//        });
-
-
         holder.img_edit_kt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
                 AlertDialog.Builder dialog = new AlertDialog.Builder(context);
 //                dialog.setTitle("");
                 dialog.setItems(R.array.alert, new DialogInterface.OnClickListener() {
@@ -147,18 +160,5 @@ public class Adapter_User extends RecyclerView.Adapter<Adapter_User.MyViewHolder
     @Override
     public int getItemCount() {
         return ds_tl.size();
-    }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvUsername, tvFullname, tvPhone;
-        private ImageView img_edit_kt;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            tvUsername = itemView.findViewById(R.id.tv_username);
-            tvFullname = itemView.findViewById(R.id.tv_fullname);
-            tvPhone = itemView.findViewById(R.id.tv_phone);
-            img_edit_kt = itemView.findViewById(R.id.imgBaChamUser);
-        }
     }
 }

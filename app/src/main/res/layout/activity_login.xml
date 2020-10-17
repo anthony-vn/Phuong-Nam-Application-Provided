@@ -50,7 +50,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edt_email_login"
+            android:id="@+id/edt_username_login"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
@@ -58,8 +58,9 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/boder_edit_text"
             android:ems="10"
+            android:maxLines="1"
             android:fontFamily="sans-serif-condensed"
-            android:hint="Email"
+            android:hint="Username"
             android:inputType="textEmailAddress"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
@@ -115,25 +116,25 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginRight="30dp"
-            android:background="@color/colorBlack"
-            android:text="Login"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
-
         <ProgressBar
             android:id="@+id/pbLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/colorBlack"
+            android:text="Login"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

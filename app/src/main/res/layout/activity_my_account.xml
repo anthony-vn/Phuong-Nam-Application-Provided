@@ -15,29 +15,21 @@
         android:src="@drawable/ic_user" />
 
     <TextView
-        android:id="@+id/tv_InforUsername"
+        android:id="@+id/tv_InforFullname1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Username"
+        android:text="Fullname"
         android:textColor="@color/colorWhite"
-        android:textSize="18sp" />
+        android:textSize="24sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:text="Info User:"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/boder_3"
         android:orientation="vertical"
@@ -51,15 +43,39 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username:"
+                android:textSize="18sp"
+                android:text="Fullname:"
                 android:textColor="@color/colorWhite" />
 
             <TextView
-                android:id="@+id/tv_InforUsername2"
+                android:id="@+id/tv_InforFullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username:"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tv_InforUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:textSize="18sp"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
 
@@ -74,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password: "
+                android:textSize="18sp"
                 android:textColor="@color/colorWhite" />
 
             <TextView
@@ -82,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text=""
+                android:textSize="18sp"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
 
@@ -94,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone:"
+                android:textSize="18sp"
                 android:textColor="@color/colorWhite" />
 
             <TextView
@@ -102,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text=""
+                android:textSize="18sp"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </LinearLayout>
@@ -114,7 +134,7 @@
         android:layout_marginTop="200dp"
         android:text="Back"
         android:textColor="@color/colorWhite"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </LinearLayout>

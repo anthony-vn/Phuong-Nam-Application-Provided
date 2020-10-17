@@ -1,8 +1,10 @@
 package com.anthonycode.bookstorephuongnamaplication.Database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.anthonycode.bookstorephuongnamaplication.DAO.HoaDonChiTietDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.HoaDonDAO;
@@ -11,12 +13,11 @@ import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.UserDAO;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "DBPhuongNamBookStore";
+    public static final String DATABASE_NAME = "DBPhuongNamBookStore.db";
     public static final int VERSION = 1;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
-
     }
 
     @Override
@@ -38,4 +39,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
 }

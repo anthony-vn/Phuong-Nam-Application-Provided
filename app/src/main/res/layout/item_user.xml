@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:backgroundTint="@color/colorWhite"
     android:padding="4dp">
 
-    <LinearLayout
-        android:weightSum="6"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="6">
 
         <ImageView
-            android:layout_weight="0"
-            android:id="@+id/img_avatar"
+            android:id="@+id/img_avatar_user"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_weight="0"
             android:padding="8dp"
-            android:src="@drawable/ic_user" />
+            android:src="@drawable/ic_user"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:layout_weight="5.8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:orientation="vertical">
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="5.5"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="@id/img_avatar_user"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_username"
@@ -56,15 +62,19 @@
 
         <ImageView
             android:id="@+id/imgBaChamUser"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="4dp"
             android:layout_weight="0"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_bacham" />
+            android:padding="10dp"
+            android:src="@drawable/ic_bacham"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.cardview.widget.CardView>
