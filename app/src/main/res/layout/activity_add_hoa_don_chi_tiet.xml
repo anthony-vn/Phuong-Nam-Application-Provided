@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#243441"
+    android:transitionName="transition_NextToHoaDonChiTiet"
+    tools:context=".Activity.AddHoaDonChiTietActivity">
+
+    <TextView
+        android:id="@+id/tvMaHoaDon_hdct"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#00000000"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã sách:"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"/>
+
+        <Spinner
+            android:id="@+id/spMaSach"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:inputType="textNoSuggestions"/>
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/edSoLuongMua_hdct"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_button_forgot_pass"
+        android:layout_marginTop="10dp"
+        android:hint="Số lượng"
+        android:inputType="number"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#777797"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnThem_HDCT"
+            android:background="@color/colorBlack"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thêm"
+            android:onClick="ADDHoaDonCHITIET"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnThanhToan_HDCT"
+            android:background="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="thanhToanHoaDon"
+            android:text="Thanh Toán"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvThanhTien"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thành tiền:"
+        android:textColor="@color/colorBright"
+        android:textSize="36px"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:id="@+id/lvCart"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

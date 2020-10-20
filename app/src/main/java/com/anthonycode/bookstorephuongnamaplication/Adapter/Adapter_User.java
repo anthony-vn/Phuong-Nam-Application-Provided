@@ -25,15 +25,16 @@ import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Adapter_User extends RecyclerView.Adapter<Adapter_User.MyViewHolder> {
 
     UserDAO theLoaiDAO;
-    private ArrayList<User> ds_tl;
+    private List<User> ds_tl;
     private Context context;
 
 
-    public Adapter_User(ArrayList<User> ds_tl, Context context) {
+    public Adapter_User(List<User> ds_tl, Context context) {
         this.ds_tl = ds_tl;
         this.context = context;
     }
@@ -147,14 +148,15 @@ public class Adapter_User extends RecyclerView.Adapter<Adapter_User.MyViewHolder
     }
 
     public void xemchitiet(int position){
-        Intent intent = new Intent(context, MyAccount.class);
-        Bundle args = new Bundle();
-        args.putString("username_user", ds_tl.get(position).getUserName());
-        args.putString("password_user", ds_tl.get(position).getPassword());
-        args.putString("phone_user", ds_tl.get(position).getPhone());
-        args.putString("fullname_user", ds_tl.get(position).getHoTen());
-        intent.putExtras(args);
-        ((Activity) context).startActivityForResult(intent, position);
+//        Intent intent = new Intent(context, MyAccount.class);
+//        Bundle args = new Bundle();
+//        args.putString("username_user", ds_tl.get(position).getUserName());
+//        args.putString("password_user", ds_tl.get(position).getPassword());
+//        args.putString("phone_user", ds_tl.get(position).getPhone());
+//        args.putString("fullname_user", ds_tl.get(position).getHoTen());
+//        intent.putExtras(args);
+//        ((Activity) context).startActivityForResult(intent, position);
+
     }
 
     @Override

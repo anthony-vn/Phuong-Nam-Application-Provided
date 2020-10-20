@@ -77,10 +77,29 @@ public class SachDAO {
 
     }
 
+    //get ma sach
+    public ArrayList<Sach> getMaSach() {
+        ArrayList<Sach> dsSach = new ArrayList<>();
+        try {
+            Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);
+            c.moveToFirst();
+            while (c.isAfterLast() == false) {
+                Sach s = new Sach();
+                s.setMaSach(c.getString(0));
+                dsSach.add(s);
+                Log.d("//=====", s.toString());
+                c.moveToNext();
+            }
+            c.close();
+        } catch (Exception e) {
+            Log.d(TAG, "Error getAllSach: ==" + e.toString());
+        }
+        return dsSach;
+    }
+
     //update
     public int updateSach(Sach s) {
         ContentValues values = new ContentValues();
-        values.put("id", s.getId());
         values.put("maSach", s.getMaSach());
         values.put("maTheLoai", s.getMaTheLoai());
         values.put("tenSach", s.getTenSach());
@@ -88,7 +107,7 @@ public class SachDAO {
         values.put("NXB", s.getNXB());
         values.put("giaBia", s.getGiaBia());
         values.put("soLuong", s.getSoLuong());
-        int result = db.update(TABLE_NAME, values, "id=?", new String[]{String.valueOf(s.getId())});
+        int result = db.update(TABLE_NAME, values, "maSach=?", new String[]{s.getMaSach()});
         if (result == 0) {
             return -1;
         }
@@ -163,13 +182,14 @@ public class SachDAO {
 
     }
 
+
     //getAll
-    public Sach getSachByID(int id) {
+    public Sach getSachByID(String masach) {
         Sach s = null;
         //WHERE clause
-        String selection = "id=?";
+        String selection = "maSach=?";
         //WHERE clause arguments
-        String[] selectionArgs = {String.valueOf(id)};
+        String[] selectionArgs = {masach};
         Cursor c = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
         Log.d("getSachByID", "===>" + c.getCount());
         c.moveToFirst();

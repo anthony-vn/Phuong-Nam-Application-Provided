@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MyAccount"/>
+        <activity android:name=".Activity.AddHoaDonChiTietActivity"></activity>
+        <activity android:name=".Activity.AddHoaDon" />
+        <activity android:name=".Activity.ListHoaDonChiTietActivity" />
+        <activity android:name=".Activity.ListHoaDonActivity" />
+        <activity android:name=".Activity.MyAccount" />
         <activity android:name=".Activity.ForgotPassword" />
         <activity android:name=".Activity.Register" />
         <activity android:name=".Activity.VerifyPassword" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Activity.Login"/>
+        <activity android:name=".Activity.Login" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

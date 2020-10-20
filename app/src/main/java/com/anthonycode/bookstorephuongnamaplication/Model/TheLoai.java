@@ -61,11 +61,6 @@ public class TheLoai {
 
     @Override
     public String toString() {
-        return "TheLoai{" +
-                "id='" + id + '\'' +
-                ", matheloai='" + maTheLoai + '\'' +
-                ", tentheloai='" + tenTheLoai + '\'' +
-                ", mota=" + moTa +
-                '}';
+        return getMaTheLoai()+" | "+getTenTheLoai();
     }
 }

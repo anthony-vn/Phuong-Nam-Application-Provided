@@ -1,12 +1,12 @@
 package com.anthonycode.bookstorephuongnamaplication.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.anthonycode.bookstorephuongnamaplication.R;
 
@@ -36,7 +36,7 @@ public class MyAccount extends AppCompatActivity {
             tvUsername.setText(usn);
             tvPassword.setText(pass);
             tvPhone.setText(phone);
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("TAG", "Error show account == " + e.toString());
         }
     }

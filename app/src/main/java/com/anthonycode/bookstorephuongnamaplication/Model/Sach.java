@@ -13,17 +13,6 @@ public class Sach {
     public Sach() {
     }
 
-    public Sach(int id, String maSach, String maTheLoai, String tenSach, String tacGia, String NXB, double giaBia, int soLuong) {
-        this.id = id;
-        this.maSach = maSach;
-        this.maTheLoai = maTheLoai;
-        this.tenSach = tenSach;
-        this.tacGia = tacGia;
-        this.NXB = NXB;
-        this.giaBia = giaBia;
-        this.soLuong = soLuong;
-    }
-
     public Sach(String maSach, String maTheLoai, String tenSach, String tacGia, String NXB, double giaBia, int soLuong) {
         this.maSach = maSach;
         this.maTheLoai = maTheLoai;
@@ -100,15 +89,6 @@ public class Sach {
 
     @Override
     public String toString() {
-        return "Sach{" +
-                "id='" + id + '\'' +
-                ", maSach='" + maSach + '\'' +
-                ", maTheLoai='" + maTheLoai + '\'' +
-                ", tenSach='" + tenSach + '\'' +
-                ", tacGia='" + tacGia + '\'' +
-                ", NXB='" + NXB + '\'' +
-                ", giaBia=" + giaBia +
-                ", soLuong=" + soLuong +
-                '}';
+        return getMaSach()+" | "+getTenSach();
     }
 }

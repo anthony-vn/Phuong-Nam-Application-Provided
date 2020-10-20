@@ -18,6 +18,7 @@ import com.anthonycode.bookstorephuongnamaplication.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_User.rcv_user;
 
@@ -26,7 +27,7 @@ public class BottomSheet_Update_User extends BottomSheetDialogFragment {
     EditText edtUsername, edtPassword, edtPhone, edtFullname;
     Button btnUpdateUser;
     UserDAO userDAO;
-    ArrayList<User> ds_gd;
+    List<User> ds_gd;
     int id;
     Adapter_User adapter_category;
 

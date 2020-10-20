@@ -10,6 +10,8 @@
     <string name="desc_signup">Please complete the information below\n for us to complete the user registration for you.</string>
     <string name="desc_verify_password">Create a new and highly secure password to protect your account.</string>
     <string name="next">Next</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
 
     <string-array name="alert">
         <item>Xem chi tiết</item>

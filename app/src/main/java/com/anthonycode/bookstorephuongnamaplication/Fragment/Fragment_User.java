@@ -21,11 +21,12 @@ import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fragment_User extends Fragment {
     public static Adapter_User adapter_user;
     public static RecyclerView rcv_user;
-    ArrayList<User> ds_user;
+    List<User> ds_user;
     UserDAO userDAO;
     private Menu menu = null;
 

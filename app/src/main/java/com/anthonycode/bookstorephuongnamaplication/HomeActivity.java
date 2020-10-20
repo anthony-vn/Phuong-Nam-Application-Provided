@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.anthonycode.bookstorephuongnamaplication.Activity.ListHoaDonActivity;
 import com.anthonycode.bookstorephuongnamaplication.Activity.MyAccount;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Books;
 import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category;
@@ -67,6 +68,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_profile:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fr_layout, new Fragment_User()).commit();
+                        break;
+                    case R.id.nav_hoadon:
+                        startActivity(new Intent(getApplicationContext(), ListHoaDonActivity.class));
                         break;
                     default:
                         fragmentClass = Fragment_Home.class;
