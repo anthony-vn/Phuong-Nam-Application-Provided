@@ -7,15 +7,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.HoaDonAdapter;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.AdapterHoaDon;
 import com.anthonycode.bookstorephuongnamaplication.DAO.HoaDonDAO;
+import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Home;
 import com.anthonycode.bookstorephuongnamaplication.Model.HoaDon;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
@@ -25,7 +24,7 @@ import java.util.List;
 public class ListHoaDonActivity extends AppCompatActivity {
     public List<HoaDon> dsHoaDon = new ArrayList<>();
     ListView lvHoaDon;
-    HoaDonAdapter adapter = null;
+    AdapterHoaDon adapter = null;
     HoaDonDAO hoaDonDAO;
 
     @Override
@@ -41,7 +40,7 @@ public class ListHoaDonActivity extends AppCompatActivity {
             Log.d("Error: ", e.toString());
         }
 
-        adapter = new HoaDonAdapter(this, dsHoaDon);
+        adapter = new AdapterHoaDon(this, dsHoaDon);
         lvHoaDon.setAdapter(adapter);
 
         lvHoaDon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -87,6 +86,5 @@ public class ListHoaDonActivity extends AppCompatActivity {
     }
 
     public void Close(View view) {
-        finish();
     }
 }

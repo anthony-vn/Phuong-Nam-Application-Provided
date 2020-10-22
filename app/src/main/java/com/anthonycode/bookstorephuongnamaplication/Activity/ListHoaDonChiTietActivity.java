@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.CartAdapter;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.AdapterCart;
 import com.anthonycode.bookstorephuongnamaplication.DAO.HoaDonChiTietDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.HoaDonChiTiet;
 import com.anthonycode.bookstorephuongnamaplication.R;
@@ -17,7 +17,7 @@ import java.util.List;
 public class ListHoaDonChiTietActivity extends AppCompatActivity {
     public List<HoaDonChiTiet> dsHDCT = new ArrayList<>();
     ListView lvCart;
-    CartAdapter adapter = null;
+    AdapterCart adapter = null;
     HoaDonChiTietDAO hoaDonChiTietDAO;
 
     @Override
@@ -33,7 +33,7 @@ public class ListHoaDonChiTietActivity extends AppCompatActivity {
             dsHDCT = hoaDonChiTietDAO.getAllHoaDonChiTietByID(b.getString("MAHOADON"));
         }
 
-        adapter = new CartAdapter(this, dsHDCT);
+        adapter = new AdapterCart(this, dsHDCT);
         lvCart.setAdapter(adapter);
     }
 }

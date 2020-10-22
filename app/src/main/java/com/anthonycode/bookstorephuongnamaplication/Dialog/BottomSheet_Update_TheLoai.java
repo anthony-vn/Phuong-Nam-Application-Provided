@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Category;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.R;
@@ -27,7 +27,7 @@ public class BottomSheet_Update_TheLoai extends BottomSheetDialogFragment {
     TheLoaiDAO theLoaiDAO;
     ArrayList<TheLoai> ds_gd;
     int id;
-    Adapter_Category adapter_category;
+    Adapter_TheLoai adapter_theLoai;
 
     public BottomSheet_Update_TheLoai() {
     }
@@ -80,8 +80,8 @@ public class BottomSheet_Update_TheLoai extends BottomSheetDialogFragment {
     public void capnhat() {
         ds_gd = new ArrayList<>();
         ds_gd = theLoaiDAO.getAllTheLoai();
-        adapter_category = new Adapter_Category(ds_gd, getContext());
-        rcv_theloai.setAdapter(adapter_category);
+        adapter_theLoai = new Adapter_TheLoai(ds_gd, getContext());
+        rcv_theloai.setAdapter(adapter_theLoai);
     }
 
 }

@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Category;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Insert_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
@@ -23,7 +23,7 @@ import com.anthonycode.bookstorephuongnamaplication.R;
 import java.util.ArrayList;
 
 public class Fragment_Category extends Fragment {
-    public static Adapter_Category adapter_category;
+    public static Adapter_TheLoai adapter_theLoai;
     public static RecyclerView rcv_theloai;
     ArrayList<TheLoai> ds_gd;
     TheLoaiDAO khoanChi_dao;
@@ -39,8 +39,8 @@ public class Fragment_Category extends Fragment {
         setHasOptionsMenu(true);
 
         ds_gd = khoanChi_dao.getAllTheLoai();
-        adapter_category = new Adapter_Category(ds_gd, getContext());
-        rcv_theloai.setAdapter(adapter_category);
+        adapter_theLoai = new Adapter_TheLoai(ds_gd, getContext());
+        rcv_theloai.setAdapter(adapter_theLoai);
 
         return view;
     }

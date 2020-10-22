@@ -17,19 +17,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Update_TheLoai;
-import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.ArrayList;
 
-public class Adapter_Category extends RecyclerView.Adapter<Adapter_Category.MyViewHolder> {
+public class Adapter_TheLoai extends RecyclerView.Adapter<Adapter_TheLoai.MyViewHolder> {
 
     private ArrayList<TheLoai> ds_tl;
     private Context context;
     TheLoaiDAO theLoaiDAO;
 
-    public Adapter_Category(ArrayList<TheLoai> ds_tl, Context context) {
+    public Adapter_TheLoai(ArrayList<TheLoai> ds_tl, Context context) {
         this.ds_tl = ds_tl;
         this.context = context;
     }
@@ -49,7 +48,7 @@ public class Adapter_Category extends RecyclerView.Adapter<Adapter_Category.MyVi
     }
 
     @Override
-    public Adapter_Category.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Adapter_TheLoai.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_theloai, parent, false);
         MyViewHolder vh = new MyViewHolder(v);

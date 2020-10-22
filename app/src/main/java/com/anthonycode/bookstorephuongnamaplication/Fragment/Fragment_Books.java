@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Books;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Sach;
 import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
 import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Insert_Books;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
@@ -23,7 +23,7 @@ import com.anthonycode.bookstorephuongnamaplication.R;
 import java.util.ArrayList;
 
 public class Fragment_Books extends Fragment {
-    public static Adapter_Books adapter_books;
+    public static Adapter_Sach adapter_sach;
     public static RecyclerView rcv_book;
     ArrayList<Sach> ds_gd;
     SachDAO sachDAO;
@@ -39,8 +39,8 @@ public class Fragment_Books extends Fragment {
         setHasOptionsMenu(true);
 
         ds_gd = sachDAO.getAllSach();
-        adapter_books = new Adapter_Books(ds_gd, getContext());
-        rcv_book.setAdapter(adapter_books);
+        adapter_sach = new Adapter_Sach(ds_gd, getContext());
+        rcv_book.setAdapter(adapter_sach);
 
         return view;
     }

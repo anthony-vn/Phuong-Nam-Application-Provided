@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorTheme"
     tools:context=".Activity.ListHoaDonActivity">
 
     <RelativeLayout
@@ -29,16 +30,21 @@
             android:layout_marginEnd="11dp"
             android:layout_marginRight="11dp"
             android:text="Thêm"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp" />
     </RelativeLayout>
 
     <EditText
         android:id="@+id/edSearch_hoadon"
         android:hint="Mã hóa đơn.."
+        android:background="@drawable/border_button_forgot_pass"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#80FFFFFF"
         android:layout_marginTop="5dp"
         android:maxLines="1" />
 

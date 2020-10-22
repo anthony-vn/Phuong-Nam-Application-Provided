@@ -16,23 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
-import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Update_Book;
-import com.anthonycode.bookstorephuongnamaplication.Dialog.BottomSheet_Update_TheLoai;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
-import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
-import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.ArrayList;
 
-public class Adapter_Books extends RecyclerView.Adapter<Adapter_Books.MyViewHolder> {
+public class Adapter_Sach extends RecyclerView.Adapter<Adapter_Sach.MyViewHolder> {
 
     private ArrayList<Sach> ds_tl;
     private Context context;
     SachDAO sachDAO;
 
-    public Adapter_Books(ArrayList<Sach> ds_tl, Context context) {
+    public Adapter_Sach(ArrayList<Sach> ds_tl, Context context) {
         this.ds_tl = ds_tl;
         this.context = context;
     }
@@ -53,7 +49,7 @@ public class Adapter_Books extends RecyclerView.Adapter<Adapter_Books.MyViewHold
     }
 
     @Override
-    public Adapter_Books.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Adapter_Sach.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_books, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
@@ -80,14 +76,12 @@ public class Adapter_Books extends RecyclerView.Adapter<Adapter_Books.MyViewHold
             @Override
             public void onClick(View view) {
                 Bundle args = new Bundle();
-                args.putInt("id_sach", ds_tl.get(position).getId());
-                args.putString("ma_sach", ds_tl.get(position).getMaSach());
-                args.putString("matheloai_sach", ds_tl.get(position).getMaTheLoai());
-                args.putString("ten_sach", ds_tl.get(position).getTenSach());
-                args.putString("tacgia_sach", ds_tl.get(position).getTacGia());
-                args.putString("nxb_sach", ds_tl.get(position).getNXB());
-                args.putDouble("giabia_sach", ds_tl.get(position).getGiaBia());
-                args.putInt("soluong_sach", ds_tl.get(position).getSoLuong());
+                args.putString("MS", ds_tl.get(position).getMaSach());
+                args.putString("TS", ds_tl.get(position).getTenSach());
+                args.putString("TG", ds_tl.get(position).getTacGia());
+                args.putString("NXB", ds_tl.get(position).getNXB());
+                args.putDouble("GB", ds_tl.get(position).getGiaBia());
+                args.putInt("SL", ds_tl.get(position).getSoLuong());
                 sachDAO = new SachDAO(context);
 
                 BottomSheet_Update_Book bottom_sheet = new BottomSheet_Update_Book();

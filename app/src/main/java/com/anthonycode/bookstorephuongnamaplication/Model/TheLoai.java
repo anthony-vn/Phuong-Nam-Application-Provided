@@ -54,11 +54,6 @@ public class TheLoai {
         this.id = id;
     }
 
-//    @Override
-//    public String toString() {
-//        return getMaTheLoai()+" | "+getTenTheLoai();
-//    }
-
     @Override
     public String toString() {
         return getMaTheLoai()+" | "+getTenTheLoai();

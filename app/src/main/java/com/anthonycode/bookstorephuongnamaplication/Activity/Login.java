@@ -1,10 +1,11 @@
 package com.anthonycode.bookstorephuongnamaplication.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -26,17 +27,17 @@ import java.util.List;
 public class Login extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
-    TextView tvSignUp;
+    TextView tvSignUp, tvForgotPass;
     ProgressBar pbLogin;
     UserDAO userDAO;
     List<User> datauser;
-    Context context;
     CheckBox chkRememberPass;
-    public static final String KEY_LOGIN = "show_what";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         ///innit view
         pbLogin = (ProgressBar) findViewById(R.id.pbLogin);
@@ -44,38 +45,52 @@ public class Login extends AppCompatActivity {
         edtPassword = (EditText) findViewById(R.id.edt_password_login);
         btnLogin = (Button) findViewById(R.id.btnSignIn);
         tvSignUp = (TextView) findViewById(R.id.tv_signUp);
+        tvForgotPass = (TextView) findViewById(R.id.tv_forgotPassword);
 
+
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, ForgotPassword.class));
+                finish();
+            }
+        });
 
         //Button set on click listener
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String getUsername = edtUsername.getText().toString().trim();
-                String getPassword = edtPassword.getText().toString().trim();
+                pbLogin.setVisibility(View.VISIBLE);
+                final String getUsername = edtUsername.getText().toString().trim();
+                final String getPassword = edtPassword.getText().toString().trim();
                 if (getUsername.isEmpty()) {
+                    pbLogin.setVisibility(View.INVISIBLE);
                     edtUsername.setError("The username is empty!");
                 } else if (getPassword.isEmpty()) {
+                    pbLogin.setVisibility(View.INVISIBLE);
                     edtPassword.setError("The password is empty!");
                 } else {
 
-                    //Check user with loop for
-                    datauser = new ArrayList<>();
-                    userDAO = new UserDAO(Login.this);
-                    datauser = userDAO.getAllUser();
-                    User user = new User(getUsername, getPassword);
-                    if (userDAO.Authenticate(user) != null) {
+                    try {
 
-                        Bundle args = new Bundle();
-                        args.putString("USN", getUsername);
-                        args.putString("PSW", getPassword);
+                        //Check user with loop for
+                        datauser = new ArrayList<>();
+                        userDAO = new UserDAO(Login.this);
+                        datauser = userDAO.getAllUser();
+                        User user = new User(getUsername, getPassword);
 
-                        Toast.makeText(Login.this, "Login successfully!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login.this, HomeActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(Login.this, "Login failed!", Toast.LENGTH_SHORT).show();
+                        if (userDAO.Authenticate(user) != null) {
+
+                            Toast.makeText(Login.this, "Login successfully!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Login.this, HomeActivity.class));
+                            finish();
+                        } else {
+                            pbLogin.setVisibility(View.INVISIBLE);
+                            Toast.makeText(Login.this, "Username hoặc mật khẩu không đúng!", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception e) {
+                        Log.d("TAG", "Error login: " + e.toString());
                     }
-
 
 //                    Toast.makeText(context, "size" + datauser.size(), Toast.LENGTH_SHORT).show();
 //                    for (int i = 0; i < datauser.size(); i++) {
@@ -87,7 +102,6 @@ public class Login extends AppCompatActivity {
 //                            Toast.makeText(Login.this, "Login failed!", Toast.LENGTH_SHORT).show();
 //                        }
 //                    }
-
                 }
 
 
@@ -106,18 +120,11 @@ public class Login extends AppCompatActivity {
 
     //check primarykey nó sẽ lấy ra những thằng nào trùng và sẽ update thằng đó
     //Cho nên chúng ta sẽ dùng nó để check login
-    public void rememberUser(String u, String p, boolean status) {
+    public void rememberUser(String u, String p) {
         SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
         SharedPreferences.Editor edit = pref.edit();
-        if (!status) {
-            //xoa tinh trang luu tru truoc do
-            edit.clear();
-        } else {
-            //luu du lieu
-            edit.putString("USERNAME", u);
-            edit.putString("PASSWORD", p);
-            edit.putBoolean("REMEMBER", status);
-        }
+        edit.putString("USERNAME_X", u);
+        edit.putString("PASSWORD_X", p);
         //luu lai toan bo
         edit.commit();
     }

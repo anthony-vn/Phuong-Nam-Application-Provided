@@ -4,7 +4,7 @@
     <string name="Close">Close</string>
     <string name="enter_email">Enter email</string>
     <string name="forgot_password">Forgot Password?</string>
-    <string name="title_forgot_pass">Enter the email address \nassociated with your account.</string>
+    <string name="title_forgot_pass">Enter the username \nassociated with your account.</string>
     <string name="finish">Finish</string>
 
     <string name="desc_signup">Please complete the information below\n for us to complete the user registration for you.</string>

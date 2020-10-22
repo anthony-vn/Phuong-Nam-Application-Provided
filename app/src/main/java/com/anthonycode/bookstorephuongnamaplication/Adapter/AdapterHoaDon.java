@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HoaDonAdapter extends BaseAdapter implements Filterable {
+public class AdapterHoaDon extends BaseAdapter implements Filterable {
 
     public Activity context;
     public LayoutInflater inflater;
@@ -32,7 +32,7 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     private Filter hoaDonFilter;
 
-    public HoaDonAdapter(Activity context, List<HoaDon> arrayHoaDon) {
+    public AdapterHoaDon(Activity context, List<HoaDon> arrayHoaDon) {
         super();
         this.context = context;
         this.arrHoaDon = arrayHoaDon;

@@ -15,13 +15,13 @@ import com.anthonycode.bookstorephuongnamaplication.R;
 
 import java.util.List;
 
-public class CartAdapter extends BaseAdapter {
+public class AdapterCart extends BaseAdapter {
     List<HoaDonChiTiet> arrHoaDonChiTiet;
     public Activity context;
     public LayoutInflater inflater;
     HoaDonChiTietDAO hoaDonChiTietDAO;
 
-    public CartAdapter(Activity context, List<HoaDonChiTiet> arrayHoaDonChiTiet) {
+    public AdapterCart(Activity context, List<HoaDonChiTiet> arrayHoaDonChiTiet) {
         super();
         this.context = context;
         this.arrHoaDonChiTiet = arrayHoaDonChiTiet;

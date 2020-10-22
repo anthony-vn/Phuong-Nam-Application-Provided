@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorTheme"
     tools:context=".Activity.ListHoaDonChiTietActivity">
 
     <ListView
         android:id="@+id/lvHoaDonChiTiet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/item_cart"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp" />
 </LinearLayout>

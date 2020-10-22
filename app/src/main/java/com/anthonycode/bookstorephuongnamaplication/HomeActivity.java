@@ -1,6 +1,7 @@
 package com.anthonycode.bookstorephuongnamaplication;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.anthonycode.bookstorephuongnamaplication.Activity.ListHoaDonActivity;
 import com.anthonycode.bookstorephuongnamaplication.Activity.MyAccount;
@@ -21,7 +23,7 @@ import com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_User;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-
+    static final float END_SCALE = 0.7f;
     DrawerLayout mDrawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -33,7 +35,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         navigationView = findViewById(R.id.nv_view);
         navigationView.setItemIconTintList(null);
-
         mDrawerLayout = findViewById(R.id.dr_ly);
         toolbar = findViewById(R.id.tg_bar);
         setSupportActionBar(toolbar);
@@ -105,4 +106,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

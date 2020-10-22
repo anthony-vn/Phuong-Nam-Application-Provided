@@ -12,9 +12,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
+        android:textStyle="bold"
         android:text="haunhps13181@fpt.edu.vn"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/header_Username"
@@ -24,8 +25,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="0dp"
         android:text="Anthony"
+        android:textStyle="bold"
         android:textColor="@color/colorWhite"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="60dp"

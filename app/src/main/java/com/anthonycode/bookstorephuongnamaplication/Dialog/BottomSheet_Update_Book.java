@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Books;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Sach;
 import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
@@ -25,7 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.ArrayList;
 
 import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Books.rcv_book;
-import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category.adapter_category;
+import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category.adapter_theLoai;
 
 
 public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
@@ -37,7 +37,7 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
     SachDAO sachDAO;
     ArrayList<Sach> ds_sach;
     int id;
-    Adapter_Books adapter_books;
+    Adapter_Sach adapter_sach;
     String matheloai_x = null;
 
     public BottomSheet_Update_Book() {
@@ -55,17 +55,16 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
         soluong = view.findViewById(R.id.edtUpdate_soluong);
         spMaTheLoai = view.findViewById(R.id.spnUpdateSach);
         btn_updateSach = view.findViewById(R.id.btnUpdateBook);
+        getSpinnerTheLoai();
 
         // Get Bundle
         Bundle mArgs = getArguments();
-        id = mArgs.getInt("IdSach");
-        final String masach_ = mArgs.getString("MaSach");
-        final String theloai_ = mArgs.getString("TheLoai");
-        final String tensach_ = mArgs.getString("TenSach");
-        final String tacgia_ = mArgs.getString("TacGia");
-        final String nhaxuatban_ = mArgs.getString("NXB");
-        final Double giabia_ = mArgs.getDouble("GiaBia");
-        final int soluong_ = mArgs.getInt("SoLuong");
+        String masach_ = mArgs.getString("MS");
+        String tensach_ = mArgs.getString("TS");
+        String tacgia_ = mArgs.getString("TG");
+        String nhaxuatban_ = mArgs.getString("NXB");
+        Double giabia_ = mArgs.getDouble("GB");
+        int soluong_ = mArgs.getInt("SL");
 
         // Hiển thị lên itemKhoanthu Update
         masach.setText(masach_);
@@ -73,7 +72,7 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
         tacgia.setText(tacgia_);
         nhaxuatban.setText(nhaxuatban_);
         giabia.setText(String.valueOf(giabia_));
-        soluong.setText(soluong_);
+        soluong.setText(String.valueOf(soluong_));
 //         Get trạng thái của GIAO_DICH
 
         //Update khoanthu
@@ -81,7 +80,7 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
         ds_sach = new ArrayList<>();
 
         //Get spinner
-        getSpinnerTheLoai();
+
         spMaTheLoai.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -97,14 +96,14 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
         btn_updateSach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String masach_ = masach.getText().toString().trim();
-                String tensach_ = tensach.getText().toString().trim();
-                String tacgia_ = tacgia.getText().toString().trim();
-                String nxb_ = nhaxuatban.getText().toString().trim();
-                String giabia_ = giabia.getText().toString().trim();
-                String soluong_ = soluong.getText().toString().trim();
+                String masach_X = masach.getText().toString().trim();
+                String tensach_X = tensach.getText().toString().trim();
+                String tacgia_X = tacgia.getText().toString().trim();
+                String nxb_X = nhaxuatban.getText().toString().trim();
+                String giabia_X = giabia.getText().toString().trim();
+                String soluong_X = soluong.getText().toString().trim();
 
-                Sach sach = new Sach(masach_, matheloai_x, tensach_, tacgia_, nxb_, Double.valueOf(giabia_), Integer.valueOf(soluong_));
+                Sach sach = new Sach(masach_X, matheloai_x, tensach_X, tacgia_X, nxb_X, Double.valueOf(giabia_X), Integer.valueOf(soluong_X));
                 sachDAO = new SachDAO(getContext());
                 sachDAO.updateSach(sach);
 
@@ -128,8 +127,8 @@ public class BottomSheet_Update_Book extends BottomSheetDialogFragment {
     public void capnhat() {
         ds_sach = new ArrayList<>();
         ds_sach = sachDAO.getAllSach();
-        adapter_books = new Adapter_Books(ds_sach, getContext());
-        rcv_book.setAdapter(adapter_category);
+        adapter_sach = new Adapter_Sach(ds_sach, getContext());
+        rcv_book.setAdapter(adapter_theLoai);
     }
 
 }

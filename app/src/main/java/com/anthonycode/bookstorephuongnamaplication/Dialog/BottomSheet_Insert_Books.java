@@ -15,12 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Books;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.Adapter_Sach;
 import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.TheLoaiDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.Sach;
 import com.anthonycode.bookstorephuongnamaplication.Model.TheLoai;
-import com.anthonycode.bookstorephuongnamaplication.Model.User;
 import com.anthonycode.bookstorephuongnamaplication.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -36,7 +35,7 @@ public class BottomSheet_Insert_Books extends BottomSheetDialogFragment {
     TheLoaiDAO theLoaiDAO;
     ArrayList<Sach> ds_book;
     ArrayList<TheLoai> ds_tl;
-    Adapter_Books adapter_books;
+    Adapter_Sach adapter_sach;
 
     private String matheloai_x;
 
@@ -120,7 +119,7 @@ public class BottomSheet_Insert_Books extends BottomSheetDialogFragment {
 
     public void capnhat() {
         ds_book = sachDAO.getAllSach();
-        adapter_books = new Adapter_Books(ds_book, getContext());
-        rcv_book.setAdapter(adapter_books);
+        adapter_sach = new Adapter_Sach(ds_book, getContext());
+        rcv_book.setAdapter(adapter_sach);
     }
 }

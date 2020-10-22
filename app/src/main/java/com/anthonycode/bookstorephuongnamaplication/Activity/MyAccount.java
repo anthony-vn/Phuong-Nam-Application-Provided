@@ -24,6 +24,7 @@ public class MyAccount extends AppCompatActivity {
         tvPhone = findViewById(R.id.tv_InforPhone);
 
         try {
+
             //Get bundle
             Intent i = getIntent();
             Bundle mArgs = i.getExtras();

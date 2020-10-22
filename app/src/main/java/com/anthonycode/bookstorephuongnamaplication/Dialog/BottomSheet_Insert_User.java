@@ -20,7 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category.adapter_category;
+import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_Category.adapter_theLoai;
 import static com.anthonycode.bookstorephuongnamaplication.Fragment.Fragment_User.rcv_user;
 
 public class BottomSheet_Insert_User extends BottomSheetDialogFragment {
@@ -90,6 +90,6 @@ public class BottomSheet_Insert_User extends BottomSheetDialogFragment {
     public void capnhat() {
         ds_tl = userDAO.getAllUser();
         adapter_user = new Adapter_User(ds_tl, getContext());
-        rcv_user.setAdapter(adapter_category);
+        rcv_user.setAdapter(adapter_theLoai);
     }
 }

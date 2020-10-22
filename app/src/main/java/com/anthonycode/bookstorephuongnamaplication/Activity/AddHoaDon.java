@@ -84,6 +84,11 @@ public class AddHoaDon extends AppCompatActivity implements DatePickerDialog.OnD
         return 1;
     }
 
+    public void close(View view) {
+        startActivity(new Intent(AddHoaDon.this, ListHoaDonActivity.class));
+        finish();
+    }
+
     public static class DatePickerFragment extends DialogFragment {
 
         @Override

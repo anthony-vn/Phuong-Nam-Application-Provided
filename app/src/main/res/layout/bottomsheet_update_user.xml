@@ -35,7 +35,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="58dp" />
 
     <EditText
         android:id="@+id/edtUpdate_password"
@@ -49,7 +49,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="58dp" />
 
 
     <EditText
@@ -64,7 +64,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="58dp" />
 
     <EditText
         android:id="@+id/edtUpdate_fullname"
@@ -78,13 +78,13 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="58dp" />
 
     <Button
         android:id="@+id/btnUpdate_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:text="Update"

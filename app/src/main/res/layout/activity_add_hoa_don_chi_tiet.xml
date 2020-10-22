@@ -48,7 +48,7 @@
     <EditText
         android:id="@+id/edSoLuongMua_hdct"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="58dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/border_button_forgot_pass"
@@ -86,11 +86,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginRight="20dp"
             android:onClick="thanhToanHoaDon"
             android:text="Thanh Toán"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"/>
+
+        <Button
+            android:background="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="huyADD_HDCT"
+            android:text="XONG"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
     </LinearLayout>
+
 
     <TextView
         android:id="@+id/tvThanhTien"

@@ -516,28 +516,6 @@
 
                 </RelativeLayout>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="30dp"
-                    android:background="#807C7C" />
-
-                <TextView
-                    android:id="@+id/thongkethangtruoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Thống kê tháng trước"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv_thongkethangtruoc_khoanthu"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

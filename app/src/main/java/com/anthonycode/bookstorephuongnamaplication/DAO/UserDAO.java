@@ -88,6 +88,20 @@ public class UserDAO {
         return true;
     }
 
+
+    //update
+    public boolean updateUserWithUsername(User user) {
+        ContentValues values = new ContentValues();
+        values.put("username", user.getUserName());
+        values.put("password", user.getPassword());
+        long result = db.update(TABLE_NAME, values, "username=?", new String[]{String.valueOf(user.getUserName())});
+        if (result <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+
     //delete
     public int deleteUserByID(int id) {
         int result = db.delete(TABLE_NAME, "id=?", new String[]{String.valueOf(id)});
@@ -120,30 +134,6 @@ public class UserDAO {
         }
     }
 
-    //check user
-    public boolean checkUser(String username, String password) {
-        //SELECT
-        String[] columns = {"id"};
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        //WHERE clause
-        String selection = "username = ? and password = ?";
-        //WHERE clause arguments
-        String[] selectionArgs = {username, password};
-        Cursor c = null;
-        try {
-            c = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
-            c.moveToFirst();
-            int i = c.getCount();
-            c.close();
-            if (i <= 0) {
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
 
     public boolean checkUserIfExist(String username) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -176,22 +166,28 @@ public class UserDAO {
         return null;
     }
 
-    public boolean isEmailExists(String username) {
+
+    public User AuthenticateUsename(User user) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME,// Selecting Table
                 new String[]{"id", "username", "password", "phone", "fullname"},//Selecting columns want to query
-                "username = ?",
-                new String[]{username},//Where clause
+                "username=?",
+                new String[]{user.getUserName()},//Where clause
                 null, null, null);
 
         if (cursor != null && cursor.moveToFirst() && cursor.getCount() > 0) {
-            //if cursor has value then in user database there is user associated with this given email so return true
-            return true;
-        }
+            //if cursor has value then in user database there is user associated with this given email
+            User user1 = new User(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
 
-        //if email does not exist return false
-        return false;
+            //Match both passwords check they are same or not
+            if (user.getUserName().equalsIgnoreCase(user1.getUserName())) {
+                return user1;
+            }
+        }
+        //if user password does not matches or there is no record with that email then return @false
+        return null;
     }
+
 
 }
 

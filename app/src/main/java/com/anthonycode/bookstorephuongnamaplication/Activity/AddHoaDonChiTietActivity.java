@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.anthonycode.bookstorephuongnamaplication.Adapter.CartAdapter;
+import com.anthonycode.bookstorephuongnamaplication.Adapter.AdapterCart;
 import com.anthonycode.bookstorephuongnamaplication.DAO.HoaDonChiTietDAO;
 import com.anthonycode.bookstorephuongnamaplication.DAO.SachDAO;
 import com.anthonycode.bookstorephuongnamaplication.Model.HoaDon;
@@ -36,7 +35,7 @@ public class AddHoaDonChiTietActivity extends AppCompatActivity {
     SachDAO bookDAO;
     List<Sach> ds_sach = new ArrayList<>();
     ListView lvCart;
-    CartAdapter adapter = null;
+    AdapterCart adapter = null;
     double thanhTien = 0;
     String maSachX = null;
     String maHoaDonZ;
@@ -51,17 +50,18 @@ public class AddHoaDonChiTietActivity extends AppCompatActivity {
         edSoLuong = (EditText) findViewById(R.id.edSoLuongMua_hdct);
         lvCart = (ListView) findViewById(R.id.lvCart);
         tvThanhTien = (TextView) findViewById(R.id.tvThanhTien);
-        getMaSach();
-        adapter = new CartAdapter(this, dsHDCT);
+
+        adapter = new AdapterCart(this, dsHDCT);
         lvCart.setAdapter(adapter);
 
         Intent in = getIntent();
         Bundle b = in.getExtras();
         if (b != null) {
-            tvMaHoaDon.setText(b.getString("MaHoaDonX"));
+            tvMaHoaDon.setText("Mã hóa đơn: " + b.getString("MaHoaDonX"));
         }
         maHoaDonZ = b.getString("MaHoaDonX");
 
+        getMaSach();
         spMaSach.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -79,9 +79,8 @@ public class AddHoaDonChiTietActivity extends AppCompatActivity {
     public void getMaSach() {
         bookDAO = new SachDAO(AddHoaDonChiTietActivity.this);
 
-        ds_sach = bookDAO.getMaSach();
-        ArrayAdapter<Sach> dataAdapter = new ArrayAdapter<Sach>(this,
-                android.R.layout.simple_spinner_item, ds_sach);
+        ds_sach = bookDAO.getAllSach();
+        ArrayAdapter<Sach> dataAdapter = new ArrayAdapter<Sach>(this, R.layout.item_spinner_masach, ds_sach);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spMaSach.setAdapter(dataAdapter);
     }
@@ -147,5 +146,10 @@ public class AddHoaDonChiTietActivity extends AppCompatActivity {
             return -1;
         }
         return 1;
+    }
+
+    public void huyADD_HDCT(View view) {
+        startActivity(new Intent(AddHoaDonChiTietActivity.this, ListHoaDonActivity.class));
+        finish();
     }
 }
